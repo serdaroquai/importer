@@ -101,7 +101,7 @@ func createWorker(id int, submitWorkCh chan *ntree.Tree, doneCh chan bool, csvWr
 					depth := 1
 					for parent := node.Parent; parent != nil; {
 						// then apply a line for each parent
-						result = append(result, []string{node.Id, parent.Id, strconv.Itoa(depth)})
+						result = append(result, []string{parent.Id, node.Id, strconv.Itoa(depth)})
 						// update depth and new parent
 						depth++
 						parent = parent.Parent
